@@ -21,7 +21,7 @@ A BankCard simulator using HTML and CSS3 and JavaScript! .
 <br/>
 <br/>
 <p align="center">
-  <a href="https://sedaghat-frontdev.github.io/ThreeCups-Game/" target="_blank">
+  <a href="https://sedaghat-frontdev.github.io/BankCard-simulator/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge" alt="Live Demo"/>
   </a>
 </p>
