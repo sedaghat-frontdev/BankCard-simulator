@@ -7,15 +7,17 @@
 
 A BankCard simulator using HTML and CSS3 and JavaScript! .
 
-<img width="1898" height="940" alt="Image" src="https://github.com/user-attachments/assets/6d92271c-456e-4b1e-9e70-3cb5c72277da" />
+<img width="1918" height="971" alt="Image" src="https://github.com/user-attachments/assets/beb14950-281e-488b-b4fa-d236604a1dc3" />
 <br/>
-<img width="1900" height="968" alt="Image" src="https://github.com/user-attachments/assets/fd5b4aa7-66c4-4ac0-babe-37d02c58b5c7" />
+<img width="1918" height="912" alt="Image" src="https://github.com/user-attachments/assets/fb41430b-8ca4-4f78-bd4d-1d4b0e37fa1c" />
 <br/>
-<img width="1900" height="946" alt="Image" src="https://github.com/user-attachments/assets/52e16701-7135-4468-9141-caad0ac0fea4" />
+<img width="1918" height="912" alt="Image" src="https://github.com/user-attachments/assets/fb41430b-8ca4-4f78-bd4d-1d4b0e37fa1c" />
 <br/>
-<img width="1897" height="967" alt="Image" src="https://github.com/user-attachments/assets/9fba67f5-4697-4ea6-8da3-3702043aa127" />
+<img width="1918" height="968" alt="Image" src="https://github.com/user-attachments/assets/ba830458-1302-4ef8-a20b-a90b40a4ed42" />
 <br/>
-<img width="1902" height="937" alt="Image" src="https://github.com/user-attachments/assets/f84f8499-ab89-4bbf-b565-350e939446cb" />
+<img width="1918" height="971" alt="Image" src="https://github.com/user-attachments/assets/e877066e-4d46-47b4-8360-e11d73d53d8b" />
+<br/>
+<img width="1903" height="940" alt="Image" src="https://github.com/user-attachments/assets/e0f597cf-bf88-42ce-b9d0-2cb96fe72157" />
 <br/>
 <br/>
 <p align="center">
