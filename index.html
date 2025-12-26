@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Card</title>
+  <link rel="stylesheet" href="style/master.css">
+  <link rel="stylesheet" href="style/FontIcons/remixicon.css">
+</head>
+<body>
+
+<div class="payment">
+
+  <!-- کارت دو رو -->
+  <div class="card-wrapper" id="cardWrapper">
+    <div class="card-inner">
+
+      <!-- روی کارت -->
+      <div class="card card-front" id="card">
+        <div class="card-top">
+          <div class="bank-name" id="bankName">BANK</div>
+          <div class="chip"></div>
+        </div>
+
+        <div class="card-number" id="cardNumber">
+          **** **** **** ****
+        </div>
+
+        <div class="card-bottom">
+          <div class="card-holder" id="cardName">CARD HOLDER</div>
+          <div class="card-expiry" id="cardExpiry">MM/YY</div>
+        </div>
+      </div>
+
+      <!-- پشت کارت -->
+      <div class="card card-back">
+        <div class="magnetic"></div>
+        <div class="cvv-box">
+          <span id="cvvShow">***</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- فرم -->
+  <div class="form">
+    <input id="number" placeholder="شماره کارت" maxlength="19">
+
+    <div class="row">
+      <input id="cvv" placeholder="CVV2" maxlength="4">
+      <input id="expiry" placeholder="MM/YY" maxlength="5">
+    </div>
+
+    <input
+      id="name"
+      placeholder="نام دارنده کارت"
+      maxlength="30">
+
+    <button>پرداخت</button>
+  </div>
+
+</div>
+
+
+
+
+<div class="footer">
+  <div>
+    <figure><img src="style/img/me.jpg" alt=""></figure>
+  </div>
+  <div>
+    <div><h1>mohammad reza sedaghat</h1></div>
+    <div><a href="https://github.com/sedaghat-frontdev"><i class="ri-github-line"></i></a></div>
+    <div><a href="https://instagram.com/sedaghat-frontdev"><i class="ri-instagram-line"></i></a></div>
+    <div><a href="mailto:rezzasedaghat@gmail.com"><i class="ri-mail-line"></i></a></div>
+  </div>
+</div>
+
+
+
+<script>
+  const numberInput = document.getElementById("number");
+const nameInput = document.getElementById("name");
+const expiryInput = document.getElementById("expiry");
+
+const card = document.getElementById("card");
+const cardNumber = document.getElementById("cardNumber");
+const cardName = document.getElementById("cardName");
+const cardExpiry = document.getElementById("cardExpiry");
+const bankName = document.getElementById("bankName");
+
+/* بانک‌ها */
+const banks = {
+  "6219": { name: "BLU BANK", bg: "linear-gradient(135deg,#00c6ff,#0072ff)" },
+  "6037": { name: "MELLI", bg: "linear-gradient(135deg,#0f2027,#203a43,#2c5364)" },
+  "5892": { name: "SEPAH", bg: "linear-gradient(135deg,#1f4037,#99f2c8)" }
+};
+
+/* شماره کارت */
+numberInput.addEventListener("input", () => {
+  let v = numberInput.value.replace(/\D/g, "");
+  v = v.match(/.{1,4}/g)?.join(" ") || "";
+  numberInput.value = v;
+  cardNumber.textContent = v || "**** **** **** ****";
+
+  const prefix = v.replace(/\s/g, "").slice(0, 4);
+  if (banks[prefix]) {
+    bankName.textContent = banks[prefix].name;
+    card.style.background = banks[prefix].bg;
+  } else {
+    bankName.textContent = "BANK";
+    card.style.background = "linear-gradient(135deg,#222,#000)";
+  }
+});
+
+/* تاریخ انقضا (ماه فقط 01 تا 12) */
+expiryInput.addEventListener("input", () => {
+  let v = expiryInput.value.replace(/\D/g, "").slice(0, 4);
+
+  if (v.length >= 2) {
+    let month = parseInt(v.slice(0, 2));
+    if (month === 0) month = 1;
+    if (month > 12) month = 12;
+    v = month.toString().padStart(2, "0") + v.slice(2);
+  }
+
+  if (v.length > 2) {
+    v = v.slice(0, 2) + "/" + v.slice(2);
+  }
+
+  expiryInput.value = v;
+  cardExpiry.textContent = v || "MM/YY";
+});
+
+/* نام دارنده کارت (حداکثر 30 کاراکتر) */
+nameInput.addEventListener("input", () => {
+  let v = nameInput.value
+    .replace(/[^a-zA-Z\s]/g, "")
+    .slice(0, 30);
+
+  nameInput.value = v;
+  cardName.textContent = v.toUpperCase() || "CARD HOLDER";
+});
+
+
+const cvvInput = document.getElementById("cvv");
+const cardWrapper = document.getElementById("cardWrapper");
+const cvvShow = document.getElementById("cvvShow");
+
+/* نمایش CVV پشت کارت */
+cvvInput.addEventListener("focus", () => {
+  cardWrapper.classList.add("flip");
+});
+
+cvvInput.addEventListener("blur", () => {
+  cardWrapper.classList.remove("flip");
+});
+
+/* تایپ CVV */
+cvvInput.addEventListener("input", () => {
+  let v = cvvInput.value.replace(/\D/g, "").slice(0, 4);
+  cvvInput.value = v;
+  cvvShow.textContent = v || "***";
+});
+
+
+</script>
+
+
+</body>
+</html>
